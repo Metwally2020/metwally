@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 class ContactChanelCard extends StatelessWidget {
   String platform;
   String url;
+  // Uri url;
+  //use the commented codes to view the problem
   ContactChanelCard({
     Key? key,
     required this.platform,
@@ -21,7 +23,9 @@ class ContactChanelCard extends StatelessWidget {
           elevation: 4,
           child: InkWell(
             onTap: () async {
+              // launchUrl(url);
               launch(url);
+              // launchUrl(url);
             },
             child: Image(
                 image: AssetImage(
