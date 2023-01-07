@@ -5,27 +5,27 @@ import 'widgets/socialmedia_platform.dart';
 class MyContactScreen extends StatelessWidget {
   final Uri phoneNumber = Uri.parse('tel:+201288220410');
   MyContactScreen({super.key});
-  // final Map myContacts = {
-  //   'whatsapp': 'https://wa.me/201288220410',
-  //   'facebook': 'http://m.me/mahmoud.metwally007',
-  //   'youtube': 'https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA',
-  //   'github': 'https://github.com/Metwally2020',
-  //   'linkedin': 'https://www.linkedin.com/in/mahmoud-metwally-257111197/',
-  //   'instagram': 'https://www.instagram.com/metwally2017/',
-  // };
+  final Map myContacts = {
+    'whatsapp': 'https://wa.me/201288220410',
+    'facebook': 'http://m.me/mahmoud.metwally007',
+    'youtube': 'https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA',
+    'github': 'https://github.com/Metwally2020',
+    'linkedin': 'https://www.linkedin.com/in/mahmoud-metwally-257111197/',
+    'instagram': 'https://www.instagram.com/metwally2017/',
+  };
 
   // if you comment "myContacts" Map that has values of type String 
   //and replaced it with the commented one that has Uri values you will see the problem
   // in the app when you try it
 
-  final Map myContacts = {
-    'whatsapp': Uri.parse('https://wa.me/201288220410'),
-    'facebook': Uri.parse('http://m.me/mahmoud.metwally007'),
-    'youtube': Uri.parse('https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA'),
-    'github': Uri.parse('https://github.com/Metwally2020'),
-    'linkedin':Uri.parse('https://www.linkedin.com/in/mahmoud-metwally-257111197/'),
-    'instagram': Uri.parse('https://www.instagram.com/metwally2017/'),
-  };
+  // final Map myContacts = {
+  //   'whatsapp': Uri.parse('https://wa.me/201288220410'),
+  //   'facebook': Uri.parse('http://m.me/mahmoud.metwally007'),
+  //   'youtube': Uri.parse('https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA'),
+  //   'github': Uri.parse('https://github.com/Metwally2020'),
+  //   'linkedin':Uri.parse('https://www.linkedin.com/in/mahmoud-metwally-257111197/'),
+  //   'instagram': Uri.parse('https://www.instagram.com/metwally2017/'),
+  // };
   
   @override
   Widget build(BuildContext context) {
