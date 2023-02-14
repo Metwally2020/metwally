@@ -4,11 +4,11 @@ import 'widgets/social_media_grid.dart';
 import 'widgets/socialmedia_platform.dart';
 
 class MyContactScreen extends StatelessWidget {
-  final Uri phoneNumber = Uri.parse('tel:+201288220410');
+  final Uri phoneNumber = Uri.parse('tel:+201286794930');
   MyContactScreen({super.key});
   final Map myContacts = {
-    'whatsapp' : Uri.parse('https://wa.me/201288220410'),
-    'facebook' : Uri.parse('http://m.me/mahmoud.metwally007'),
+    'whatsapp' : Uri.parse('https://wa.me/201286794930'),
+    'facebook' : Uri.parse('http://www.facebook.com/mahmoud.metwally007'),
     'youtube'  : Uri.parse('https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA'),
     'github'   : Uri.parse('https://github.com/Metwally2020'),
     'linkedin' : Uri.parse('https://www.linkedin.com/in/mahmoud-metwally-257111197/'),
@@ -57,14 +57,14 @@ class MyContactScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '+201288220410',
+                      '+201286794930',
                       style: TextStyle(
                           fontSize: 20,
                           color: Color.fromARGB(255, 125, 125, 125)),
                     ),
                     IconButton(
                       onPressed: () async {
-                        launchUrl(phoneNumber);
+                        launchUrl(phoneNumber,mode: LaunchMode.externalApplication);
                       },
                       icon: Icon(Icons.phone),
                       iconSize: 30,
@@ -84,3 +84,4 @@ class MyContactScreen extends StatelessWidget {
     );
   }
 }
+

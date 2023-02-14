@@ -15,22 +15,16 @@ class ContactChanelCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(50),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          elevation: 4,
-          child: InkWell(
-            onTap: () async {
-              await launchUrl(url, mode: LaunchMode.externalApplication);
-            },
-            child: Image(
-                image: AssetImage(
-                  'assets/$platform.png',
-                ),
-                height: 80,
-                width: 80,
-                fit: BoxFit.cover),
+        InkWell(
+          onTap: () async {
+            await launchUrl(url, mode: LaunchMode.externalApplication);
+          },
+          child: CircleAvatar(
+            radius: 40,
+            backgroundColor: Colors.transparent,
+            backgroundImage: AssetImage(
+              'assets/$platform.png',
+            ),
           ),
         ),
       ],
