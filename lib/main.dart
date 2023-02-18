@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/my_contact_screen.dart';
+import 'screens/platform.dart';
 
 void main() {
   runApp(const MyApp());

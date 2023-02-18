@@ -13,7 +13,7 @@ class SocialMediaGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: 6,
+      itemCount: myContacts.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         mainAxisSpacing: 20,
@@ -21,9 +21,9 @@ class SocialMediaGrid extends StatelessWidget {
       ),
       itemBuilder: (BuildContext context, index) {
         return ContactChanelCard(
-          platform: myContacts.keys.toList()[index],
-          url: myContacts.values.toList()[index],
-        );
+                platform: myContacts.keys.toList()[index],
+                url: myContacts.values.toList()[index],
+              );
       },
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,

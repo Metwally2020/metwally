@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../platform.dart';
 
 class ContactChanelCard extends StatelessWidget {
   String platform;
@@ -16,8 +20,13 @@ class ContactChanelCard extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () async {
-            await launchUrl(url, mode: LaunchMode.externalApplication);
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      PlatformScreen(platform: platform, url: url)),
+            );
           },
           child: CircleAvatar(
             radius: 40,
