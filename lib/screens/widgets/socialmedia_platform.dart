@@ -18,7 +18,15 @@ class ContactChanelCard extends StatelessWidget {
       children: [
         InkWell(
           onTap: () async {
-            await launchUrl(url, mode: LaunchMode.externalApplication);
+
+            showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Center(
+        
+      );
+    });
+
           },
           child: CircleAvatar(
             radius: 40,
