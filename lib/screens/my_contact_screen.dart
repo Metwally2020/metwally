@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/social_media_grid.dart';
-import 'widgets/socialmedia_platform.dart';
 
 class MyContactScreen extends StatelessWidget {
   final Uri phoneNumber = Uri.parse('tel:+201286794930');

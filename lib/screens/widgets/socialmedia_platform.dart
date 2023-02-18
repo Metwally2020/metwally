@@ -1,10 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '../platform.dart';
 
+// ignore: must_be_immutable
 class ContactChanelCard extends StatelessWidget {
   String platform;
   Uri url;

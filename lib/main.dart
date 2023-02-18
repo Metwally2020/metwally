@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_1/screens/my_home_page.dart';
 import 'screens/my_contact_screen.dart';
-import 'screens/platform.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyContactScreen(),
+      home: MyHomePage(),
     );
   }
 }
