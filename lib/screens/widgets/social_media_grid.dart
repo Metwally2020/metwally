@@ -3,17 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'socialmedia_platform.dart';
 
 class SocialMediaGrid extends StatelessWidget {
-  const SocialMediaGrid({
+  BuildContext mainContext;
+  SocialMediaGrid({
     Key? key,
     required this.myContacts,
+    required this.mainContext,
   }) : super(key: key);
 
   final Map myContacts;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext PageContext) {
     return GridView.builder(
-      itemCount: myContacts.length,
+      itemCount: 6,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         mainAxisSpacing: 20,
@@ -21,9 +23,11 @@ class SocialMediaGrid extends StatelessWidget {
       ),
       itemBuilder: (BuildContext context, index) {
         return ContactChanelCard(
-                platform: myContacts.keys.toList()[index],
-                url: myContacts.values.toList()[index],
-              );
+          platform: myContacts.keys.toList()[index],
+          url: myContacts.values.toList()[index],
+          //sending the first page context to the icon
+          mainContext: mainContext,
+        );
       },
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,

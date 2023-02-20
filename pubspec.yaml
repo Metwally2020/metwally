@@ -40,6 +40,10 @@ dependencies:
   flutter_launcher_icons: ^0.11.0
   flutter_native_splash: ^2.2.16
   rename: ^2.0.1
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding
+      path: plugins/window_size
 
 dev_dependencies:
   flutter_test:

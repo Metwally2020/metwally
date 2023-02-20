@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import '../platform.dart';
+import 'package:flutter_application_1/screens/sure.dart';
 
 // ignore: must_be_immutable
 class ContactChanelCard extends StatelessWidget {
   String platform;
   Uri url;
-
+BuildContext mainContext;
   ContactChanelCard({
     Key? key,
     required this.platform,
     required this.url,
+    required this.mainContext,
   }) : super(key: key);
 
   @override
@@ -19,10 +20,10 @@ class ContactChanelCard extends StatelessWidget {
         InkWell(
           onTap: () {
             Navigator.push(
-              context,
+              //sending the first page context to the second screen
+              mainContext,
               MaterialPageRoute(
-                  builder: (context) =>
-                      PlatformScreen(platform: platform, url: url)),
+                  builder: (context) => Sure(platform: platform, url: url,mainContext: context,)),
             );
           },
           child: CircleAvatar(

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/platform.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
-class PlatformScreen extends StatelessWidget {
+class Sure extends StatelessWidget {
   String platform;
   Uri url;
-  PlatformScreen({
+  BuildContext mainContext;
+  Sure({
     super.key,
     required this.platform,
     required this.url,
+    required this.mainContext,
   });
 
   @override
@@ -21,16 +24,24 @@ class PlatformScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.red),
+              backgroundColor: MaterialStateProperty.all(Colors.green),
               padding: MaterialStateProperty.all(EdgeInsets.all(20)),
               textStyle: MaterialStateProperty.all(
                 TextStyle(fontSize: 30),
               ),
             ),
-            onPressed: () async {
-              await launchUrl(url, mode: LaunchMode.externalApplication);
+            onPressed: () {
+              // sending the first page's context to the 3ed page
+              Navigator.push(
+                mainContext,
+                MaterialPageRoute(
+                    builder: (context) => PlatformScreen(
+                          platform: platform,
+                          url: url,
+                        )),
+              );
             },
-            child: Text('Start $platform')),
+            child: Text('$platform Sure!')),
       ),
     );
   }

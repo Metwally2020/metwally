@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/social_media_grid.dart';
+import 'widgets/socialmedia_platform.dart';
 
 class MyContactScreen extends StatelessWidget {
   final Uri phoneNumber = Uri.parse('tel:+201286794930');
   MyContactScreen({super.key});
   final Map myContacts = {
-    'whatsapp' : Uri.parse('https://wa.me/201286794930'),
-    'facebook' : Uri.parse('http://www.facebook.com/mahmoud.metwally007'),
-    'youtube'  : Uri.parse('https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA'),
-    'github'   : Uri.parse('https://github.com/Metwally2020'),
-    'linkedin' : Uri.parse('https://www.linkedin.com/in/mahmoud-metwally-257111197/'),
+    'whatsapp': Uri.parse('https://wa.me/201286794930'),
+    'facebook': Uri.parse('http://www.facebook.com/mahmoud.metwally007'),
+    'youtube':
+        Uri.parse('https://www.youtube.com/channel/UCkGm79_pM3zx5qhsjHebSSA'),
+    'github': Uri.parse('https://github.com/Metwally2020'),
+    'linkedin':
+        Uri.parse('https://www.linkedin.com/in/mahmoud-metwally-257111197/'),
     'instagram': Uri.parse('https://www.instagram.com/metwally2017/'),
   };
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext mainContext) {
     return SafeArea(
       bottom: true,
       left: true,
@@ -63,7 +66,8 @@ class MyContactScreen extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        launchUrl(phoneNumber,mode: LaunchMode.externalApplication);
+                        launchUrl(phoneNumber,
+                            mode: LaunchMode.externalApplication);
                       },
                       icon: Icon(Icons.phone),
                       iconSize: 30,
@@ -74,7 +78,10 @@ class MyContactScreen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                SocialMediaGrid(myContacts: myContacts),
+                //sending the first page context to grid
+
+                SocialMediaGrid(
+                    myContacts: myContacts, mainContext: mainContext),
               ]),
             ),
           ),
@@ -83,4 +90,3 @@ class MyContactScreen extends StatelessWidget {
     );
   }
 }
-
