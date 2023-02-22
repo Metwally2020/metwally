@@ -18,15 +18,16 @@ class ContactChanelCard extends StatelessWidget {
       children: [
         InkWell(
           onTap: () async {
-
             showModalBottomSheet(
-    context: context,
-    builder: (context) {
-      return Center(
-        
-      );
-    });
-
+                context: context,
+                builder: (context) {
+                  return Center(
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('mvjlsnvkda'),
+                    ),
+                  );
+                });
           },
           child: CircleAvatar(
             radius: 40,
